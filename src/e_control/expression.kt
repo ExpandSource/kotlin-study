@@ -29,4 +29,33 @@ fun main() {
     println("표현식 : ${status}입니다.")
 
     // 코틀린에서는 if-else를 표현식으로 사용가능하기 때문에 3항 연산자 없음.
+
+    // if문 분기에 따라 반환 (Java 방식)
+    fun getPassOrFail1(score: Int): String {
+        if (score >= 60) {
+            return "Pass"
+        } else {
+            return "Fail"
+        }
+    }
+
+    // if 표현식을 반환값으로 적용 가능
+    fun getPassOrFail2(score: Int): String {
+        return if (score >= 60) {
+            "Pass"
+        } else {
+            "Fail"
+        }
+    }
+
+    // 표현식으로 간략히 표현 (3개 함수 모두 동일하게 작동)
+    fun getPassOrFail3(score: Int): String {
+        return if (score >= 60) "Pass" else "Fail"
+    }
+
+    val score = 50
+    println(getPassOrFail1(score))
+    println(getPassOrFail2(score))
+    println(getPassOrFail3(score))
+
 }
