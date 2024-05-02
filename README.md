@@ -142,6 +142,40 @@
   - 인터페이스는 다른 인터페이스 상속 가능
   - 한 클래스는 여러 인터페이스 상속 가능
 
+## 가시성(Visibility) 제어
+  - Java : public, protected, (default), private
+  - Kotlin : (public), protected, internal, private
+  - 자바의 기본값은 default, 코틀린의 기본값은 public
+
+  - 코틀린
+    - public : 모든 곳에서 접근 가능
+    - protected : **선언된 클래스** 또는 하위 클래스에서만 접근 가능 
+                 (파일 최상단에서는 사용 불가능)
+    - internal : 같은 **모듈**에서만 접근 가능
+    - private : 선언된 클래스에서만 접근가능
+                 (같은 파일 내에서만 접근 가능)
+
+  - 자바
+    - public : 모든 곳에서 접근 가능
+    - protected : 같은 패키지 또는 하위 클래스에서만 접근 가능
+    - default : 같은 패키지에서만 접근 가능
+    - private : 선언된 클래스에서만 접근가능
+
+  - 모듈
+    - 함께 컴파일되는 파일(코틀린)들의 집합
+      - IntelliJ IDEA 모듈
+      - 메이븐 프로젝트 단위
+      - Gradle Source Set
+    - 각각의 모듈은 독립적으로 컴파일됨.
+    - 각 모듈은 자체적인 종속성을 가지고, 각각의 설정을 가질 수 있음.
+    - `internal` 접근제어자는 모듈 내에서는 자유롭게 사용하지만 라이브러리나 애플리케이션 단위에서는 내부 구현을 숨길 수 있음.
+
+## object 키워드
+  - `companion object` : java의 `static` 키워드에 대응하는 개념
+    - 클래스 내부에 static 멤버를 정의할 때 사용
+    - companion object 는 하나의 객체로 간주되기 때문에 다른 타입을 상속, 구현 받을 수 있음.
+  - `object` 키워드를 사용해서 만든 클래스는 싱글톤 클래스가 된다. 
+  - 익명 객체를 만들 때는 `object: 타입이름`을 사용한다.
 
 
 
